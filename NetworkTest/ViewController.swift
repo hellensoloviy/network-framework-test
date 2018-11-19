@@ -9,22 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var server: UDPServer?
+    var client: UDPClient?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
-//        Network.shared.setupUpdates()
-//        Network.shared.start()
-        
-        
-        
         let browser = SharedBrowser()
         browser.start()
         print(browser.services)
         
+    }
+    
+    @IBAction func serverButtonTapped(_ sender: UIButton) {
+        server = UDPServer()
+    }
+    
+    @IBAction func clientButtonTapped(_ sender: UIButton) {
+        client = UDPClient(name: "iPhone Lemberg")
     }
 
 }

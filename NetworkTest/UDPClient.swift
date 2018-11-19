@@ -19,7 +19,7 @@ class UDPClient {
         queue = DispatchQueue(label: "UDP Client Queue")
         
         //Create connection
-        let endpoint = NWEndpoint.service(name: name, type: "_camera._udp", domain: "local", interface: nil)
+        let endpoint = NWEndpoint.service(name: name, type: SharedBrowser.LocalType, domain: SharedBrowser.LocalDomain, interface: nil)
         connection =  NWConnection(to: endpoint, using: .udp)
         
         //Set the state update handler

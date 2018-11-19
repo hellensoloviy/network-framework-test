@@ -9,11 +9,18 @@
 import Foundation
 
 class SharedBrowser: NSObject {
-    let type: String = "_camera._udp"
+    static let LocalDomain: String = "local."
+    static let LocalType: String = "_camera._udp."
+
+    
+    let type: String = SharedBrowser.LocalType
     var browser: NetServiceBrowser
     
     var services: [NetService]
     var sharedPointsList: [SharedPoint]
+    
+    var domains = [String]()
+    var isSearching: Bool = false
     
     override init() {
         self.browser = NetServiceBrowser()
@@ -26,8 +33,7 @@ class SharedBrowser: NSObject {
     
     func start() {
         self.services.removeAll()
-        self.browser.delegate = self
-        self.browser.searchForBrowsableDomains()
+        self.browser.searchForServices(ofType: type, inDomain: SharedBrowser.LocalDomain)
     }
     
     func updateInterface () {
@@ -44,6 +50,8 @@ class SharedBrowser: NSObject {
         }
     }
     
+    ////// -
+    
 }
 
 extension SharedBrowser: NetServiceBrowserDelegate, NetServiceDelegate {
@@ -51,13 +59,22 @@ extension SharedBrowser: NetServiceBrowserDelegate, NetServiceDelegate {
         self.updateInterface()
     }
     
+    func netServiceBrowserWillSearch(_ browser: NetServiceBrowser) {
+        print("-- Search started!")
+    }
+    
+    func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser) {
+        print("-- Search did stop!")
+    }
+    
     func netServiceBrowser(_ aNetServiceBrowser: NetServiceBrowser, didFind aNetService: NetService, moreComing: Bool) {
-        print("adding a service")
+        print("adding a service \(aNetService.name)")
         self.services.append(aNetService)
         if !moreComing {
             self.updateInterface()
         }
     }
+    
     
     func netServiceBrowser(_ aNetServiceBrowser: NetServiceBrowser, didRemove aNetService: NetService, moreComing: Bool) {
         if let ix = self.services.index(of:aNetService) {
@@ -84,6 +101,7 @@ extension SharedBrowser: NetServiceBrowserDelegate, NetServiceDelegate {
     func netServiceDidPublish(_ sender: NetService) {
         print("netServiceDidPublish:\(sender)");
     }
+    
     func netServiceWillResolve(_ sender: NetService) {
         print("netServiceWillResolve:\(sender)");
     }

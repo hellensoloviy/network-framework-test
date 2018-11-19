@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B27697521A2D8A8004CB7D8 /* NetworkTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkTest.entitlements; sourceTree = "<group>"; };
 		9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPoint.swift; sourceTree = "<group>"; };
 		9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBrowser.swift; sourceTree = "<group>"; };
 		9BD0835F219EF218003F9064 /* NetworkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,12 +71,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B27697621A2D8B1004CB7D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BD08356219EF218003F9064 = {
 			isa = PBXGroup;
 			children = (
 				9BD08361219EF218003F9064 /* NetworkTest */,
 				9BD08376219EF21A003F9064 /* NetworkTestTests */,
 				9BD08360219EF218003F9064 /* Products */,
+				9B27697621A2D8B1004CB7D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +100,7 @@
 		9BD08361219EF218003F9064 /* NetworkTest */ = {
 			isa = PBXGroup;
 			children = (
+				9B27697521A2D8A8004CB7D8 /* NetworkTest.entitlements */,
 				9BD08362219EF218003F9064 /* AppDelegate.swift */,
 				9BD08364219EF218003F9064 /* ViewController.swift */,
 				9BD08384219EF674003F9064 /* CameraController.swift */,
@@ -167,6 +177,17 @@
 				TargetAttributes = {
 					9BD0835E219EF218003F9064 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 					9BD08372219EF21A003F9064 = {
 						CreatedOnToolsVersion = 10.1;
