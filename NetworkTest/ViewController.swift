@@ -15,6 +15,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    @IBAction func startButtonTapped(_ sender: UIButton) {
+//        Network.shared.setupUpdates()
+//        Network.shared.start()
+        
+        
+        
+        let browser = SharedBrowser()
+        browser.start()
+        print(browser.services)
+        
+    }
 
 }
 

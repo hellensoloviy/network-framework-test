@@ -6,8 +6,23 @@
 	<dict>
 		<key>NetworkTest.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9BD0835E219EF218003F9064</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9BD08372219EF21A003F9064</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

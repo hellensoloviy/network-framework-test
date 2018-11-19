@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BAEED9D219F1DED0027FFCF /* SharedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */; };
+		9BAEED9F219F1EBE0027FFCF /* SharedBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */; };
 		9BD08363219EF218003F9064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08362219EF218003F9064 /* AppDelegate.swift */; };
 		9BD08365219EF218003F9064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08364219EF218003F9064 /* ViewController.swift */; };
 		9BD08368219EF218003F9064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD08366219EF218003F9064 /* Main.storyboard */; };
 		9BD0836A219EF21A003F9064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD08369219EF21A003F9064 /* Assets.xcassets */; };
 		9BD0836D219EF21A003F9064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD0836B219EF21A003F9064 /* LaunchScreen.storyboard */; };
 		9BD08378219EF21A003F9064 /* NetworkTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08377219EF21A003F9064 /* NetworkTestTests.swift */; };
+		9BD08383219EF257003F9064 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08382219EF257003F9064 /* Network.swift */; };
+		9BD08385219EF674003F9064 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08384219EF674003F9064 /* CameraController.swift */; };
+		9BD08387219EF821003F9064 /* ViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08386219EF821003F9064 /* ViewerController.swift */; };
+		9BD08389219EF868003F9064 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08388219EF868003F9064 /* UDPClient.swift */; };
+		9BD0838B219EF8A6003F9064 /* UDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD0838A219EF8A6003F9064 /* UDPServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPoint.swift; sourceTree = "<group>"; };
+		9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBrowser.swift; sourceTree = "<group>"; };
 		9BD0835F219EF218003F9064 /* NetworkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD08362219EF218003F9064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD08364219EF218003F9064 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +45,11 @@
 		9BD08373219EF21A003F9064 /* NetworkTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD08377219EF21A003F9064 /* NetworkTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestTests.swift; sourceTree = "<group>"; };
 		9BD08379219EF21A003F9064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD08382219EF257003F9064 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		9BD08384219EF674003F9064 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		9BD08386219EF821003F9064 /* ViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerController.swift; sourceTree = "<group>"; };
+		9BD08388219EF868003F9064 /* UDPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
+		9BD0838A219EF8A6003F9064 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,13 @@
 			children = (
 				9BD08362219EF218003F9064 /* AppDelegate.swift */,
 				9BD08364219EF218003F9064 /* ViewController.swift */,
+				9BD08384219EF674003F9064 /* CameraController.swift */,
+				9BD08386219EF821003F9064 /* ViewerController.swift */,
+				9BD08382219EF257003F9064 /* Network.swift */,
+				9BD08388219EF868003F9064 /* UDPClient.swift */,
+				9BD0838A219EF8A6003F9064 /* UDPServer.swift */,
+				9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */,
+				9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */,
 				9BD08366219EF218003F9064 /* Main.storyboard */,
 				9BD08369219EF21A003F9064 /* Assets.xcassets */,
 				9BD0836B219EF21A003F9064 /* LaunchScreen.storyboard */,
@@ -197,8 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BD0838B219EF8A6003F9064 /* UDPServer.swift in Sources */,
+				9BD08389219EF868003F9064 /* UDPClient.swift in Sources */,
+				9BD08387219EF821003F9064 /* ViewerController.swift in Sources */,
 				9BD08365219EF218003F9064 /* ViewController.swift in Sources */,
 				9BD08363219EF218003F9064 /* AppDelegate.swift in Sources */,
+				9BAEED9D219F1DED0027FFCF /* SharedPoint.swift in Sources */,
+				9BD08383219EF257003F9064 /* Network.swift in Sources */,
+				9BD08385219EF674003F9064 /* CameraController.swift in Sources */,
+				9BAEED9F219F1EBE0027FFCF /* SharedBrowser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
