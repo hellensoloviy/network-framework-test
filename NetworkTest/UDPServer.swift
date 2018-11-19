@@ -23,7 +23,7 @@ class UDPServer {
         listener = try! NWListener(using: .udp)
         
         // Set up the listener with the _camera._udp service
-        listener.service =  NWListener.Service(type: "_camera._udp.")
+        listener.service =  NWListener.Service(type: SharedBrowser.LocalType)
 
         // Listen to changes in the service registration
         listener.serviceRegistrationUpdateHandler = { (serviceChange) in

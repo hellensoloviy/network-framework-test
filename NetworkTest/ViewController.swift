@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var server: UDPServer?
     var client: UDPClient?
+    var browser: SharedBrowser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +19,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
-        let browser = SharedBrowser()
-        browser.start()
-        print(browser.services)
+        browser = SharedBrowser()
+        browser?.searchDomains()
+//        print(browser.services)
         
     }
     

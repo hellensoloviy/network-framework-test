@@ -10,30 +10,38 @@ import Foundation
 
 class SharedBrowser: NSObject {
     static let LocalDomain: String = "local."
-    static let LocalType: String = "_camera._udp."
+    static let LocalType: String = "_camera._udp"
 
     
     let type: String = SharedBrowser.LocalType
     var browser: NetServiceBrowser
     
     var services: [NetService]
+    var domains: [String]
     var sharedPointsList: [SharedPoint]
     
-    var domains = [String]()
     var isSearching: Bool = false
     
     override init() {
         self.browser = NetServiceBrowser()
         self.services = [NetService]()
+        self.domains = []
         self.sharedPointsList = [SharedPoint]()
         
         super.init()
         self.browser.delegate = self
     }
     
-    func start() {
-        self.services.removeAll()
-        self.browser.searchForServices(ofType: type, inDomain: SharedBrowser.LocalDomain)
+    func searchDomains() {
+        print("-- domains search start with domains \(domains)")
+        self.browser.searchForBrowsableDomains()
+    }
+    
+    func searchServices() {
+        self.browser.stop()
+        print("-- services search start with domains \(domains)")
+        print("-- services search start with  services \(services)")
+        self.browser.searchForServices(ofType: type, inDomain: domains.first ?? "")
     }
     
     func updateInterface () {
@@ -86,8 +94,20 @@ extension SharedBrowser: NetServiceBrowserDelegate, NetServiceDelegate {
         }
     }
     
+    func netServiceBrowser(_ browser: NetServiceBrowser, didFindDomain domainString: String, moreComing: Bool) {
+        print("-DOMAIN - \(domainString)")
+        
+        print("adding a domain \(domainString)")
+        self.domains.append(domainString)
+        if !moreComing {
+            searchServices()
+        }
+    }
+    
     func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String : NSNumber]) {
         print("Search was not successful. Error code: \(errorDict[NetService.errorCode]!)")
+        print("Error domain: \(errorDict[NetService.errorDomain]!)")
+        print("Error: \(errorDict)")
     }
     
     func netServiceWillPublish(_ sender: NetService) {
