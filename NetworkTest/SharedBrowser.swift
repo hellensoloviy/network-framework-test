@@ -8,16 +8,32 @@
 
 import Foundation
 
+protocol BrowsingDelegate: class {
+    func domainsDidUpdate(_ domains: [String])
+    func servicesListDidUpdate(_ services: [NetService])
+    func browsingStopped()
+//    func browsingInProgress()
+}
+
 class SharedBrowser: NSObject {
     static let LocalDomain: String = "local."
     static let LocalType: String = "_camera._udp"
 
+    weak var delegate: BrowsingDelegate?
     
     let type: String = SharedBrowser.LocalType
     var browser: NetServiceBrowser
     
-    var services: [NetService]
-    var domains: [String]
+    var services: [NetService] {
+        didSet {
+            delegate?.servicesListDidUpdate(services)
+        }
+    }
+    var domains: [String] {
+        didSet {
+            delegate?.domainsDidUpdate(domains)
+        }
+    }
     var sharedPointsList: [SharedPoint]
     
     var isSearching: Bool = false
@@ -35,18 +51,26 @@ class SharedBrowser: NSObject {
     func searchDomains() {
         print("-- domains search start with domains \(domains)")
         self.browser.searchForBrowsableDomains()
+        isSearching = true
     }
     
-    func searchServices() {
+    func stopBrowsing() {
         self.browser.stop()
+        isSearching = false
+    }
+    
+    //MARK: - Private
+    private func searchServices() {
+        stopBrowsing()
         print("-- services search start with domains \(domains)")
         print("-- services search start with services \(services)")
         self.browser.searchForServices(ofType: type, inDomain: domains.first ?? "")
+        isSearching = true
     }
     
-    func updateInterface () {
+    
+    private func updateInterface () {
         print("-- updateInterface - services \(services)")
-
         for service in services {
             if service.port == -1 {
                 print("service \(service.name) of type \(service.type)" +
@@ -138,6 +162,7 @@ extension SharedBrowser: NetServiceBrowserDelegate, NetServiceDelegate {
         print("netServiceDidStopService:\(sender)");
         self.services.append(sender)
         self.updateInterface()
+        delegate?.browsingStopped()
     }
     
     func netService(_ sender: NetService,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B35D55E21A41E12006337B6 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35D55D21A41E12006337B6 /* WelcomeVC.swift */; };
 		9BAEED9D219F1DED0027FFCF /* SharedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */; };
 		9BAEED9F219F1EBE0027FFCF /* SharedBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */; };
 		9BD08363219EF218003F9064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08362219EF218003F9064 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 		9BD08387219EF821003F9064 /* ViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08386219EF821003F9064 /* ViewerController.swift */; };
 		9BD08389219EF868003F9064 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08388219EF868003F9064 /* UDPClient.swift */; };
 		9BD0838B219EF8A6003F9064 /* UDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD0838A219EF8A6003F9064 /* UDPServer.swift */; };
+		9BF25C6821A425AA009047BF /* SearchGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6721A425AA009047BF /* SearchGameVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		9B27697521A2D8A8004CB7D8 /* NetworkTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkTest.entitlements; sourceTree = "<group>"; };
+		9B35D55D21A41E12006337B6 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPoint.swift; sourceTree = "<group>"; };
 		9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBrowser.swift; sourceTree = "<group>"; };
 		9BD0835F219EF218003F9064 /* NetworkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +54,7 @@
 		9BD08386219EF821003F9064 /* ViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerController.swift; sourceTree = "<group>"; };
 		9BD08388219EF868003F9064 /* UDPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
 		9BD0838A219EF8A6003F9064 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
+		9BF25C6721A425AA009047BF /* SearchGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGameVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9B35D55C21A41DF1006337B6 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				9B35D55D21A41E12006337B6 /* WelcomeVC.swift */,
+				9BF25C6721A425AA009047BF /* SearchGameVC.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
 		9BD08356219EF218003F9064 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				9B27697521A2D8A8004CB7D8 /* NetworkTest.entitlements */,
+				9B35D55C21A41DF1006337B6 /* Start */,
 				9BD08362219EF218003F9064 /* AppDelegate.swift */,
 				9BD08364219EF218003F9064 /* ViewController.swift */,
 				9BD08384219EF674003F9064 /* CameraController.swift */,
@@ -240,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD0838B219EF8A6003F9064 /* UDPServer.swift in Sources */,
+				9B35D55E21A41E12006337B6 /* WelcomeVC.swift in Sources */,
 				9BD08389219EF868003F9064 /* UDPClient.swift in Sources */,
 				9BD08387219EF821003F9064 /* ViewerController.swift in Sources */,
 				9BD08365219EF218003F9064 /* ViewController.swift in Sources */,
@@ -248,6 +263,7 @@
 				9BD08383219EF257003F9064 /* Network.swift in Sources */,
 				9BD08385219EF674003F9064 /* CameraController.swift in Sources */,
 				9BAEED9F219F1EBE0027FFCF /* SharedBrowser.swift in Sources */,
+				9BF25C6821A425AA009047BF /* SearchGameVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
