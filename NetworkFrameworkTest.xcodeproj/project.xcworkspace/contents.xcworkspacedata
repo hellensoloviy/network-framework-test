@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NetworkTest.xcodeproj">
+      location = "self:/Users/hellensoloviy/Developer/swift/NetworkTest/NetworkFrameworkTest.xcodeproj">
    </FileRef>
 </Workspace>

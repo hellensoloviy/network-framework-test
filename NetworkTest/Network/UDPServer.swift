@@ -16,14 +16,14 @@ class UDPServer {
     var isConnected: Bool = false
     weak var controller: ViewerController?
     
-    init?() {
+    init?(named presettedName: String? = nil) {
         queue = DispatchQueue(label: "UDP Server Queue")
         
         // Create the listener
         listener = try! NWListener(using: .udp)
         
         // Set up the listener with the _camera._udp service
-        listener.service =  NWListener.Service(type: SharedBrowser.LocalType)
+        listener.service =  NWListener.Service(name: presettedName, type: SharedBrowser.LocalType)
 
         // Listen to changes in the service registration
         listener.serviceRegistrationUpdateHandler = { (serviceChange) in
@@ -31,8 +31,8 @@ class UDPServer {
             case .add(let endpoint):
                 switch endpoint {
                 case let .service(name, _, _, _):
-                    print("Listening as \(name)")
-                    self.controller?.advertised(name: name)
+                    print("Listening \(name)")
+//                    self.controller?.advertised(name: name)
                 default:
                     break
                 }

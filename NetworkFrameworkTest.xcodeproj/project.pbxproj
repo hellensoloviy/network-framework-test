@@ -13,59 +13,39 @@
 		9BD08363219EF218003F9064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08362219EF218003F9064 /* AppDelegate.swift */; };
 		9BD08365219EF218003F9064 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08364219EF218003F9064 /* ViewController.swift */; };
 		9BD08368219EF218003F9064 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD08366219EF218003F9064 /* Main.storyboard */; };
-		9BD0836A219EF21A003F9064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD08369219EF21A003F9064 /* Assets.xcassets */; };
 		9BD0836D219EF21A003F9064 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD0836B219EF21A003F9064 /* LaunchScreen.storyboard */; };
-		9BD08378219EF21A003F9064 /* NetworkTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08377219EF21A003F9064 /* NetworkTestTests.swift */; };
-		9BD08383219EF257003F9064 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08382219EF257003F9064 /* Network.swift */; };
 		9BD08385219EF674003F9064 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08384219EF674003F9064 /* CameraController.swift */; };
 		9BD08387219EF821003F9064 /* ViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08386219EF821003F9064 /* ViewerController.swift */; };
 		9BD08389219EF868003F9064 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD08388219EF868003F9064 /* UDPClient.swift */; };
 		9BD0838B219EF8A6003F9064 /* UDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD0838A219EF8A6003F9064 /* UDPServer.swift */; };
 		9BF25C6821A425AA009047BF /* SearchGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6721A425AA009047BF /* SearchGameVC.swift */; };
+		9BF25C6A21A434E5009047BF /* HostGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6921A434E5009047BF /* HostGameVC.swift */; };
+		9BF25C6E21A43AD4009047BF /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6D21A43AD4009047BF /* UIViewController+Keyboard.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9BD08374219EF21A003F9064 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9BD08357219EF218003F9064 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9BD0835E219EF218003F9064;
-			remoteInfo = NetworkTest;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9B27697521A2D8A8004CB7D8 /* NetworkTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkTest.entitlements; sourceTree = "<group>"; };
 		9B35D55D21A41E12006337B6 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPoint.swift; sourceTree = "<group>"; };
 		9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBrowser.swift; sourceTree = "<group>"; };
-		9BD0835F219EF218003F9064 /* NetworkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD0835F219EF218003F9064 /* NetworkFrameworkTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkFrameworkTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD08362219EF218003F9064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD08364219EF218003F9064 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9BD08367219EF218003F9064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9BD08369219EF21A003F9064 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BD0836C219EF21A003F9064 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9BD0836E219EF21A003F9064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BD08373219EF21A003F9064 /* NetworkTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BD08377219EF21A003F9064 /* NetworkTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestTests.swift; sourceTree = "<group>"; };
-		9BD08379219EF21A003F9064 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BD08382219EF257003F9064 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9BD08384219EF674003F9064 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		9BD08386219EF821003F9064 /* ViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerController.swift; sourceTree = "<group>"; };
 		9BD08388219EF868003F9064 /* UDPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
 		9BD0838A219EF8A6003F9064 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
 		9BF25C6721A425AA009047BF /* SearchGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGameVC.swift; sourceTree = "<group>"; };
+		9BF25C6921A434E5009047BF /* HostGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostGameVC.swift; sourceTree = "<group>"; };
+		9BF25C6D21A43AD4009047BF /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		9BF25C7521A43DB9009047BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BF25C7721A43DC1009047BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9BD0835C219EF218003F9064 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BD08370219EF21A003F9064 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -87,6 +67,7 @@
 			children = (
 				9B35D55D21A41E12006337B6 /* WelcomeVC.swift */,
 				9BF25C6721A425AA009047BF /* SearchGameVC.swift */,
+				9BF25C6921A434E5009047BF /* HostGameVC.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -95,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				9BD08361219EF218003F9064 /* NetworkTest */,
-				9BD08376219EF21A003F9064 /* NetworkTestTests */,
 				9BD08360219EF218003F9064 /* Products */,
 				9B27697621A2D8B1004CB7D8 /* Frameworks */,
 			);
@@ -104,8 +84,7 @@
 		9BD08360219EF218003F9064 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9BD0835F219EF218003F9064 /* NetworkTest.app */,
-				9BD08373219EF21A003F9064 /* NetworkTestTests.xctest */,
+				9BD0835F219EF218003F9064 /* NetworkFrameworkTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,39 +93,70 @@
 			isa = PBXGroup;
 			children = (
 				9B27697521A2D8A8004CB7D8 /* NetworkTest.entitlements */,
-				9B35D55C21A41DF1006337B6 /* Start */,
 				9BD08362219EF218003F9064 /* AppDelegate.swift */,
-				9BD08364219EF218003F9064 /* ViewController.swift */,
-				9BD08384219EF674003F9064 /* CameraController.swift */,
-				9BD08386219EF821003F9064 /* ViewerController.swift */,
-				9BD08382219EF257003F9064 /* Network.swift */,
-				9BD08388219EF868003F9064 /* UDPClient.swift */,
-				9BD0838A219EF8A6003F9064 /* UDPServer.swift */,
-				9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */,
-				9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */,
-				9BD08366219EF218003F9064 /* Main.storyboard */,
-				9BD08369219EF21A003F9064 /* Assets.xcassets */,
-				9BD0836B219EF21A003F9064 /* LaunchScreen.storyboard */,
-				9BD0836E219EF21A003F9064 /* Info.plist */,
+				9BF25C6B21A43ABD009047BF /* Common */,
+				9B35D55C21A41DF1006337B6 /* Start */,
+				9BF25C7021A43B0D009047BF /* Network */,
+				9BF25C7121A43B1C009047BF /* old */,
+				9BF25C7221A43B29009047BF /* Resources */,
 			);
 			path = NetworkTest;
 			sourceTree = "<group>";
 		};
-		9BD08376219EF21A003F9064 /* NetworkTestTests */ = {
+		9BF25C6B21A43ABD009047BF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9BD08377219EF21A003F9064 /* NetworkTestTests.swift */,
-				9BD08379219EF21A003F9064 /* Info.plist */,
+				9BF25C6C21A43AC3009047BF /* Extensions */,
 			);
-			path = NetworkTestTests;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9BF25C6C21A43AC3009047BF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9BF25C6D21A43AD4009047BF /* UIViewController+Keyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9BF25C7021A43B0D009047BF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9BD08388219EF868003F9064 /* UDPClient.swift */,
+				9BD0838A219EF8A6003F9064 /* UDPServer.swift */,
+				9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */,
+				9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9BF25C7121A43B1C009047BF /* old */ = {
+			isa = PBXGroup;
+			children = (
+				9BD08364219EF218003F9064 /* ViewController.swift */,
+				9BD08384219EF674003F9064 /* CameraController.swift */,
+				9BD08386219EF821003F9064 /* ViewerController.swift */,
+			);
+			path = old;
+			sourceTree = "<group>";
+		};
+		9BF25C7221A43B29009047BF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BD08366219EF218003F9064 /* Main.storyboard */,
+				9BD0836B219EF21A003F9064 /* LaunchScreen.storyboard */,
+				9BF25C7521A43DB9009047BF /* Assets.xcassets */,
+				9BF25C7721A43DC1009047BF /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9BD0835E219EF218003F9064 /* NetworkTest */ = {
+		9BD0835E219EF218003F9064 /* NetworkFrameworkTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9BD0837C219EF21A003F9064 /* Build configuration list for PBXNativeTarget "NetworkTest" */;
+			buildConfigurationList = 9BD0837C219EF21A003F9064 /* Build configuration list for PBXNativeTarget "NetworkFrameworkTest" */;
 			buildPhases = (
 				9BD0835B219EF218003F9064 /* Sources */,
 				9BD0835C219EF218003F9064 /* Frameworks */,
@@ -156,28 +166,10 @@
 			);
 			dependencies = (
 			);
-			name = NetworkTest;
+			name = NetworkFrameworkTest;
 			productName = NetworkTest;
-			productReference = 9BD0835F219EF218003F9064 /* NetworkTest.app */;
+			productReference = 9BD0835F219EF218003F9064 /* NetworkFrameworkTest.app */;
 			productType = "com.apple.product-type.application";
-		};
-		9BD08372219EF21A003F9064 /* NetworkTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9BD0837F219EF21A003F9064 /* Build configuration list for PBXNativeTarget "NetworkTestTests" */;
-			buildPhases = (
-				9BD0836F219EF21A003F9064 /* Sources */,
-				9BD08370219EF21A003F9064 /* Frameworks */,
-				9BD08371219EF21A003F9064 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9BD08375219EF21A003F9064 /* PBXTargetDependency */,
-			);
-			name = NetworkTestTests;
-			productName = NetworkTestTests;
-			productReference = 9BD08373219EF21A003F9064 /* NetworkTestTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -203,13 +195,9 @@
 							};
 						};
 					};
-					9BD08372219EF21A003F9064 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 9BD0835E219EF218003F9064;
-					};
 				};
 			};
-			buildConfigurationList = 9BD0835A219EF218003F9064 /* Build configuration list for PBXProject "NetworkTest" */;
+			buildConfigurationList = 9BD0835A219EF218003F9064 /* Build configuration list for PBXProject "NetworkFrameworkTest" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -222,8 +210,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9BD0835E219EF218003F9064 /* NetworkTest */,
-				9BD08372219EF21A003F9064 /* NetworkTestTests */,
+				9BD0835E219EF218003F9064 /* NetworkFrameworkTest */,
 			);
 		};
 /* End PBXProject section */
@@ -234,15 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD0836D219EF21A003F9064 /* LaunchScreen.storyboard in Resources */,
-				9BD0836A219EF21A003F9064 /* Assets.xcassets in Resources */,
 				9BD08368219EF218003F9064 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BD08371219EF21A003F9064 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,36 +233,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD0838B219EF8A6003F9064 /* UDPServer.swift in Sources */,
+				9BF25C6E21A43AD4009047BF /* UIViewController+Keyboard.swift in Sources */,
 				9B35D55E21A41E12006337B6 /* WelcomeVC.swift in Sources */,
 				9BD08389219EF868003F9064 /* UDPClient.swift in Sources */,
 				9BD08387219EF821003F9064 /* ViewerController.swift in Sources */,
+				9BF25C6A21A434E5009047BF /* HostGameVC.swift in Sources */,
 				9BD08365219EF218003F9064 /* ViewController.swift in Sources */,
 				9BD08363219EF218003F9064 /* AppDelegate.swift in Sources */,
 				9BAEED9D219F1DED0027FFCF /* SharedPoint.swift in Sources */,
-				9BD08383219EF257003F9064 /* Network.swift in Sources */,
 				9BD08385219EF674003F9064 /* CameraController.swift in Sources */,
 				9BAEED9F219F1EBE0027FFCF /* SharedBrowser.swift in Sources */,
 				9BF25C6821A425AA009047BF /* SearchGameVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BD0836F219EF21A003F9064 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9BD08378219EF21A003F9064 /* NetworkTestTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9BD08375219EF21A003F9064 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9BD0835E219EF218003F9064 /* NetworkTest */;
-			targetProxy = 9BD08374219EF21A003F9064 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9BD08366219EF218003F9064 /* Main.storyboard */ = {
@@ -427,12 +391,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57NTVVM6G2;
-				INFOPLIST_FILE = NetworkTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NetworkTest/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hellios.NetworkTest;
+				PRODUCT_BUNDLE_IDENTIFIER = hellios.NetworkFrameworkTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,64 +409,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57NTVVM6G2;
-				INFOPLIST_FILE = NetworkTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NetworkTest/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hellios.NetworkTest;
+				PRODUCT_BUNDLE_IDENTIFIER = hellios.NetworkFrameworkTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		9BD08380219EF21A003F9064 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 57NTVVM6G2;
-				INFOPLIST_FILE = NetworkTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = hellios.NetworkTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkTest.app/NetworkTest";
-			};
-			name = Debug;
-		};
-		9BD08381219EF21A003F9064 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 57NTVVM6G2;
-				INFOPLIST_FILE = NetworkTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = hellios.NetworkTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkTest.app/NetworkTest";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9BD0835A219EF218003F9064 /* Build configuration list for PBXProject "NetworkTest" */ = {
+		9BD0835A219EF218003F9064 /* Build configuration list for PBXProject "NetworkFrameworkTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BD0837A219EF21A003F9064 /* Debug */,
@@ -511,20 +433,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BD0837C219EF21A003F9064 /* Build configuration list for PBXNativeTarget "NetworkTest" */ = {
+		9BD0837C219EF21A003F9064 /* Build configuration list for PBXNativeTarget "NetworkFrameworkTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9BD0837D219EF21A003F9064 /* Debug */,
 				9BD0837E219EF21A003F9064 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9BD0837F219EF21A003F9064 /* Build configuration list for PBXNativeTarget "NetworkTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9BD08380219EF21A003F9064 /* Debug */,
-				9BD08381219EF21A003F9064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

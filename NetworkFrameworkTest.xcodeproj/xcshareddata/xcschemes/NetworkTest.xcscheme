@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9BD0835E219EF218003F9064"
-               BuildableName = "NetworkTest.app"
-               BlueprintName = "NetworkTest"
-               ReferencedContainer = "container:NetworkTest.xcodeproj">
+               BuildableName = "NetworkFrameworkTest.app"
+               BlueprintName = "NetworkFrameworkTest"
+               ReferencedContainer = "container:NetworkFrameworkTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "9BD08372219EF21A003F9064"
                BuildableName = "NetworkTestTests.xctest"
                BlueprintName = "NetworkTestTests"
-               ReferencedContainer = "container:NetworkTest.xcodeproj">
+               ReferencedContainer = "container:NetworkFrameworkTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BD0835E219EF218003F9064"
-            BuildableName = "NetworkTest.app"
-            BlueprintName = "NetworkTest"
-            ReferencedContainer = "container:NetworkTest.xcodeproj">
+            BuildableName = "NetworkFrameworkTest.app"
+            BlueprintName = "NetworkFrameworkTest"
+            ReferencedContainer = "container:NetworkFrameworkTest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BD0835E219EF218003F9064"
-            BuildableName = "NetworkTest.app"
-            BlueprintName = "NetworkTest"
-            ReferencedContainer = "container:NetworkTest.xcodeproj">
+            BuildableName = "NetworkFrameworkTest.app"
+            BlueprintName = "NetworkFrameworkTest"
+            ReferencedContainer = "container:NetworkFrameworkTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9BD0835E219EF218003F9064"
-            BuildableName = "NetworkTest.app"
-            BlueprintName = "NetworkTest"
-            ReferencedContainer = "container:NetworkTest.xcodeproj">
+            BuildableName = "NetworkFrameworkTest.app"
+            BlueprintName = "NetworkFrameworkTest"
+            ReferencedContainer = "container:NetworkFrameworkTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
