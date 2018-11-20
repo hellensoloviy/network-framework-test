@@ -40,11 +40,13 @@ class SharedBrowser: NSObject {
     func searchServices() {
         self.browser.stop()
         print("-- services search start with domains \(domains)")
-        print("-- services search start with  services \(services)")
+        print("-- services search start with services \(services)")
         self.browser.searchForServices(ofType: type, inDomain: domains.first ?? "")
     }
     
     func updateInterface () {
+        print("-- updateInterface - services \(services)")
+
         for service in services {
             if service.port == -1 {
                 print("service \(service.name) of type \(service.type)" +
@@ -57,9 +59,7 @@ class SharedBrowser: NSObject {
             }
         }
     }
-    
-    ////// -
-    
+
 }
 
 extension SharedBrowser: NetServiceBrowserDelegate, NetServiceDelegate {
@@ -136,6 +136,8 @@ extension SharedBrowser: NetServiceBrowserDelegate, NetServiceDelegate {
     
     func netServiceDidStop(_ sender: NetService) {
         print("netServiceDidStopService:\(sender)");
+        self.services.append(sender)
+        self.updateInterface()
     }
     
     func netService(_ sender: NetService,
