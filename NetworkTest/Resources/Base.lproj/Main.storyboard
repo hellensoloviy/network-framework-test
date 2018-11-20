@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NetworkTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NetworkFrameworkTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,12 +52,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-479" y="47"/>
         </scene>
         <!--WelcomeVC-->
         <scene sceneID="APH-dd-rmw">
             <objects>
-                <viewController storyboardIdentifier="WelcomeVC" id="bqK-lt-BlA" customClass="WelcomeVC" customModule="NetworkTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" id="bqK-lt-BlA" customClass="WelcomeVC" customModule="NetworkFrameworkTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NY1-fF-Psj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +142,7 @@
         <!--Search GameVC-->
         <scene sceneID="4HN-HA-zj3">
             <objects>
-                <viewController storyboardIdentifier="SearchGameVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="evm-yP-DAd" customClass="SearchGameVC" customModule="NetworkTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchGameVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="evm-yP-DAd" customClass="SearchGameVC" customModule="NetworkFrameworkTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f7o-OJ-ir7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@
                                 <rect key="frame" x="16" y="93" width="343" height="490"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowsingResultTableViewCell" rowHeight="66" id="F62-Aq-tXe" customClass="BrowsingResultTableViewCell" customModule="NetworkTest" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BrowsingResultTableViewCell" rowHeight="66" id="F62-Aq-tXe" customClass="BrowsingResultTableViewCell" customModule="NetworkFrameworkTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F62-Aq-tXe" id="Dd4-Gc-uud">
@@ -186,7 +186,6 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="resultLabel" destination="RfF-my-kKn" id="cJb-IF-7Y8"/>
-                                            <segue destination="sv6-3E-bkM" kind="show" id="CeV-lc-9JJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -288,12 +287,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMh-mf-YU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="1617"/>
+            <point key="canvasLocation" x="2481" y="2014"/>
         </scene>
         <!--Host GameVC-->
         <scene sceneID="Hwl-Ed-ZVS">
             <objects>
-                <viewController storyboardIdentifier="HostGameVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tV3-R1-fec" customClass="HostGameVC" customModule="NetworkTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HostGameVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tV3-R1-fec" customClass="HostGameVC" customModule="NetworkFrameworkTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nBa-x5-5ne">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,7 +327,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="hostNewGameTapped:" destination="tV3-R1-fec" eventType="touchUpInside" id="geh-7G-xwu"/>
-                                    <segue destination="nFQ-f4-9UB" kind="show" id="UW5-Ck-vl6"/>
+                                    <segue destination="EjI-zH-Ibg" kind="show" id="HI7-82-eEy"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1c-t8-684">
@@ -444,7 +443,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCF-lB-VW5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="870"/>
+            <point key="canvasLocation" x="2745" y="295"/>
+        </scene>
+        <!--Game FieldVC-->
+        <scene sceneID="tjL-4n-KSK">
+            <objects>
+                <viewController storyboardIdentifier="GameFieldVC" id="EjI-zH-Ibg" customClass="GameFieldVC" customModule="NetworkFrameworkTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B8w-3Z-WpC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQI-ES-7MA">
+                                <rect key="frame" x="16" y="622" width="140" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.72549019609999998" blue="0.65490196079999996" alpha="0.833984375" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="SXB-c3-Jor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g2a-Xa-AYH"/>
+                    <connections>
+                        <outlet property="currentUserBoard" destination="hQI-ES-7MA" id="XEY-Wk-mxv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rnQ-II-Yxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2095" y="1055"/>
         </scene>
     </scenes>
 </document>

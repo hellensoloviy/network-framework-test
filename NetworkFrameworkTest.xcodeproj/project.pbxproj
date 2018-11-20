@@ -21,6 +21,7 @@
 		9BF25C6821A425AA009047BF /* SearchGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6721A425AA009047BF /* SearchGameVC.swift */; };
 		9BF25C6A21A434E5009047BF /* HostGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6921A434E5009047BF /* HostGameVC.swift */; };
 		9BF25C6E21A43AD4009047BF /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6D21A43AD4009047BF /* UIViewController+Keyboard.swift */; };
+		9BF25C7B21A44E37009047BF /* GameFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C7A21A44E37009047BF /* GameFieldVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9BF25C6D21A43AD4009047BF /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		9BF25C7521A43DB9009047BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BF25C7721A43DC1009047BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BF25C7A21A44E37009047BF /* GameFieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				9BD08362219EF218003F9064 /* AppDelegate.swift */,
 				9BF25C6B21A43ABD009047BF /* Common */,
 				9B35D55C21A41DF1006337B6 /* Start */,
+				9BF25C7921A44E18009047BF /* Gaming */,
 				9BF25C7021A43B0D009047BF /* Network */,
 				9BF25C7121A43B1C009047BF /* old */,
 				9BF25C7221A43B29009047BF /* Resources */,
@@ -149,6 +152,14 @@
 				9BF25C7721A43DC1009047BF /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9BF25C7921A44E18009047BF /* Gaming */ = {
+			isa = PBXGroup;
+			children = (
+				9BF25C7A21A44E37009047BF /* GameFieldVC.swift */,
+			);
+			path = Gaming;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF25C7B21A44E37009047BF /* GameFieldVC.swift in Sources */,
 				9BD0838B219EF8A6003F9064 /* UDPServer.swift in Sources */,
 				9BF25C6E21A43AD4009047BF /* UIViewController+Keyboard.swift in Sources */,
 				9B35D55E21A41E12006337B6 /* WelcomeVC.swift in Sources */,
