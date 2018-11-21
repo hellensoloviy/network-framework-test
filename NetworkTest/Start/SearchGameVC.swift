@@ -30,7 +30,7 @@ class SearchGameVC: UIViewController {
             tableView?.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,11 +38,16 @@ class SearchGameVC: UIViewController {
         browser?.searchDomains()
         browser?.delegate = self
     }
-   
-    @IBAction func connectTapped(_ sender: UIButton) {
-        print("Ready to host a game")
-    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GameFieldVC, let host = sender as? NetService {
+            
+            vc.hostName = host.name
+            vc.client = UDPClient(name: host.name)
+        }
+    }
+   
+    //MARK: - Actions
     @IBAction func backTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -50,6 +55,15 @@ class SearchGameVC: UIViewController {
 }
 
 extension SearchGameVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard !data.isEmpty else {
+            return
+        }
+        
+        let choosedHost = data[indexPath.row]
+        performSegue(withIdentifier: Constants.Segue.gameViewFromClientPoint, sender: choosedHost)
+    }
     
 }
 

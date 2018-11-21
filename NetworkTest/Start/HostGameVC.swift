@@ -19,6 +19,13 @@ class HostGameVC: UIViewController {
         hideKeyboardWhenTappedAround()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GameFieldVC {
+            vc.server = server
+        }
+    }
+    
+    //MARK: - Actions
     @IBAction func hostNewGameTapped(_ sender: UIButton) {
         if let name = serverNameTF.text {
             server = UDPServer(named: name)

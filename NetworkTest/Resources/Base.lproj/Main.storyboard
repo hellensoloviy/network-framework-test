@@ -237,6 +237,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="PDX-2d-gbd" id="rLD-ht-rWr"/>
+                        <segue destination="EjI-zH-Ibg" kind="show" identifier="showGameFieldClient" id="ji8-z0-bVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wL-BE-wtu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -287,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMh-mf-YU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="2014"/>
+            <point key="canvasLocation" x="3238" y="1636"/>
         </scene>
         <!--Host GameVC-->
         <scene sceneID="Hwl-Ed-ZVS">
@@ -327,7 +328,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="hostNewGameTapped:" destination="tV3-R1-fec" eventType="touchUpInside" id="geh-7G-xwu"/>
-                                    <segue destination="EjI-zH-Ibg" kind="show" id="HI7-82-eEy"/>
+                                    <segue destination="EjI-zH-Ibg" kind="show" identifier="showGameFieldServer" id="HI7-82-eEy"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1c-t8-684">
@@ -448,7 +449,7 @@
         <!--Game FieldVC-->
         <scene sceneID="tjL-4n-KSK">
             <objects>
-                <viewController storyboardIdentifier="GameFieldVC" id="EjI-zH-Ibg" customClass="GameFieldVC" customModule="NetworkFrameworkTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameFieldVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EjI-zH-Ibg" customClass="GameFieldVC" customModule="NetworkFrameworkTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B8w-3Z-WpC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -469,7 +470,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rnQ-II-Yxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2095" y="1055"/>
+            <point key="canvasLocation" x="1961" y="1241"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HI7-82-eEy"/>
+    </inferredMetricsTieBreakers>
 </document>
