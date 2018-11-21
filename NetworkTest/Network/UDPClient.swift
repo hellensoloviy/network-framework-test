@@ -10,10 +10,14 @@ import Foundation
 import Network
 import UIKit
 
+protocol ClientDelegate: class {
+    func connected()
+}
+
 class UDPClient {
     var connection: NWConnection
     var queue: DispatchQueue
-    weak var controller: CameraController?
+    weak var delegate: ClientDelegate?
     
     init(name: String) {
         queue = DispatchQueue(label: "UDP Client Queue")
@@ -55,9 +59,7 @@ class UDPClient {
         connection.receiveMessage { (content, contest, isComplete, error) in
             if content != nil {
                 print("Got connected!")
-                if let controller = self.controller {
-                    controller.connected()
-                }
+                self.delegate?.connected()
             }
         }
     }
@@ -75,4 +77,5 @@ class UDPClient {
             }
         }
     }
+    
 }

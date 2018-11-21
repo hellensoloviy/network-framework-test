@@ -22,6 +22,8 @@
 		9BF25C6A21A434E5009047BF /* HostGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6921A434E5009047BF /* HostGameVC.swift */; };
 		9BF25C6E21A43AD4009047BF /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C6D21A43AD4009047BF /* UIViewController+Keyboard.swift */; };
 		9BF25C7B21A44E37009047BF /* GameFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C7A21A44E37009047BF /* GameFieldVC.swift */; };
+		9BF25C7D21A45234009047BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C7C21A45234009047BF /* Constants.swift */; };
+		9BF25C7F21A452F8009047BF /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF25C7E21A452F8009047BF /* Notification+Names.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		9BF25C7521A43DB9009047BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BF25C7721A43DC1009047BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BF25C7A21A44E37009047BF /* GameFieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldVC.swift; sourceTree = "<group>"; };
+		9BF25C7C21A45234009047BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9BF25C7E21A452F8009047BF /* Notification+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Names.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				9BF25C6C21A43AC3009047BF /* Extensions */,
+				9BF25C7C21A45234009047BF /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				9BF25C6D21A43AD4009047BF /* UIViewController+Keyboard.swift */,
+				9BF25C7E21A452F8009047BF /* Notification+Names.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,7 +260,9 @@
 				9BD08363219EF218003F9064 /* AppDelegate.swift in Sources */,
 				9BAEED9D219F1DED0027FFCF /* SharedPoint.swift in Sources */,
 				9BD08385219EF674003F9064 /* CameraController.swift in Sources */,
+				9BF25C7D21A45234009047BF /* Constants.swift in Sources */,
 				9BAEED9F219F1EBE0027FFCF /* SharedBrowser.swift in Sources */,
+				9BF25C7F21A452F8009047BF /* Notification+Names.swift in Sources */,
 				9BF25C6821A425AA009047BF /* SearchGameVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

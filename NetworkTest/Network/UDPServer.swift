@@ -10,11 +10,19 @@ import Foundation
 import Network
 import UIKit
 
+protocol ServerDelegate: class {
+    func serverConnected()
+    func advertised(name: String)
+    func received(frame: Data)
+}
+
 class UDPServer {
     var listener: NWListener
     var queue: DispatchQueue
     var isConnected: Bool = false
-    weak var controller: ViewerController?
+    weak var controller: GameFieldVC?
+    
+    weak var delegate: ServerDelegate?
     
     init?(named presettedName: String? = nil) {
         queue = DispatchQueue(label: "UDP Server Queue")
@@ -46,7 +54,7 @@ class UDPServer {
             if let strongSelf = self {
                 newConnection.start(queue: strongSelf.queue)
                 
-                strongSelf.controller?.serverConnected()
+                strongSelf.delegate?.serverConnected()
                 strongSelf.receive(on: newConnection)
             }
             
@@ -80,7 +88,7 @@ class UDPServer {
                     print("Echoed initial content: \(frame)")
                     self.isConnected = true
                 } else {
-                    self.controller?.received(frame: frame)
+                    self.delegate?.received(frame: frame)
                 }
                 
                 if error == nil {
