@@ -29,6 +29,9 @@ class GameFieldVC: UIViewController {
         return server != nil
     }
     
+    var currentUserData: PlayingGameData? = nil
+    var opponentUserData: PlayingGameData? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,13 +47,15 @@ class GameFieldVC: UIViewController {
         server?.delegate = self
         client?.delegate = self
 
+        currentUserData = PlayingGameData(boardOrigin: currentUserBoard.frame.origin, boardSize: currentUserBoard.frame.size, gameFieldSize: view.frame.size, boardCenter: currentUserBoard.center)
     }
     
     //MARK: - Observers
     private func setupConnectedState() {
-        opponentUserBoard.isHidden = false
-        print("Server connected!")
-        
+        DispatchQueue.main.async {
+            self.opponentUserBoard.isHidden = false
+            print("Server connected!")
+        }
     }
     
     //MARK: - Actions
@@ -61,9 +66,9 @@ class GameFieldVC: UIViewController {
             gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x + translation.x, y: gestureRecognizer.view!.center.y + translation.y)
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
             if !isServer {
-                let pointToSend = NSCoder.string(for: gestureRecognizer.view!.frame)
-                if let data = pointToSend.data(using: .utf8) {
-                     client?.send(frames: [data])
+                let dataToSend = PlayingGameData(boardOrigin: currentUserBoard.frame.origin, boardSize: currentUserBoard.frame.size, gameFieldSize: self.view.frame.size, boardCenter: gestureRecognizer.view!.center)
+                if let encodedData = try? JSONEncoder().encode(dataToSend) {
+                    client?.send(frames: [encodedData])
                 }
             }
             
@@ -79,23 +84,22 @@ extension GameFieldVC: ServerDelegate {
     
     func received(frame: Data) {
         print("GAME -- Server got data!")
-        
-        if isServer {
-            guard let stringRect = String(data: frame, encoding: .utf8) else {
-                print("-- ISSUE")
-                return
-            }
-            
-            var recaivedData = NSCoder.cgRect(for: stringRect)
-            recaivedData.origin = CGPoint(x: view.frame.size.width - recaivedData.origin.x, y: view.bounds.size.height - recaivedData.origin.y)
-            print("-- GET -- data \(stringRect)")
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.1) {
-                    self.opponentUserBoard.frame = recaivedData
-                }
-            }
-            
+        guard let opponentGameData = try? JSONDecoder().decode(PlayingGameData.self, from: frame) else {
+            print("--ERROR -- NO DATA -- ")
+            return
         }
+
+        DispatchQueue.main.async {
+            self.opponentUserData = opponentGameData
+            let x = (opponentGameData.boardCenter.x * self.view.frame.size.width) / opponentGameData.gameFieldSize.width
+            let y = (opponentGameData.boardCenter.y * self.view.frame.size.height) / opponentGameData.gameFieldSize.height
+            let opponentCenter = CGPoint(x: self.view.frame.size.width - x, y: self.view.frame.size.height - y)
+            
+            UIView.animate(withDuration: 0.1) {
+                self.opponentUserBoard.center = opponentCenter
+            }
+        }
+            
 
     }
     
@@ -110,5 +114,20 @@ extension GameFieldVC: ClientDelegate {
     func connected() {
         print("GAME -- Client Connected!")
         setupConnectedState()
+    }
+}
+
+
+class PlayingGameData: Codable {
+    var boardOrigin: CGPoint
+    var boardSize: CGSize
+    var gameFieldSize: CGSize
+    var boardCenter: CGPoint
+    
+    init(boardOrigin: CGPoint, boardSize: CGSize, gameFieldSize: CGSize, boardCenter: CGPoint) {
+        self.boardOrigin = boardOrigin
+        self.boardSize = boardSize
+        self.gameFieldSize = gameFieldSize
+        self.boardCenter = boardCenter
     }
 }
