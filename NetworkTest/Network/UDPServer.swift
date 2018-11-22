@@ -19,6 +19,8 @@ protocol ServerDelegate: class {
 class UDPServer {
     var listener: NWListener
     var queue: DispatchQueue
+    var connection: NWConnection? = nil
+
     var isConnected: Bool = false
     weak var controller: GameFieldVC?
     
@@ -40,7 +42,6 @@ class UDPServer {
                 switch endpoint {
                 case let .service(name, _, _, _):
                     print("Listening \(name)")
-//                    self.controller?.advertised(name: name)
                 default:
                     break
                 }
@@ -52,8 +53,9 @@ class UDPServer {
         // Handle incoming connections
         listener.newConnectionHandler = { [weak self] (newConnection) in
             if let strongSelf = self {
+                strongSelf.connection = newConnection
                 newConnection.start(queue: strongSelf.queue)
-                
+
                 strongSelf.delegate?.serverConnected()
                 strongSelf.receive(on: newConnection)
             }
@@ -82,6 +84,7 @@ class UDPServer {
     // Receive packets from the other side and push to screen as video frames
     func receive(on connection: NWConnection) {
         connection.receiveMessage { (content, context, isComplete, error) in
+
             if let frame = content {
                 if !self.isConnected {
                     connection.send(content: frame, completion: .idempotent)
@@ -94,6 +97,24 @@ class UDPServer {
                 if error == nil {
                     self.receive(on: connection)
                 }
+            }
+        }
+    }
+    
+    //Send framed from the camera to the other device
+    func send(frames: [Data]) {
+        guard let connection = self.connection else {
+            print("No connection!")
+            return
+        }
+        
+        connection.batch {
+            for frame in frames {
+                connection.send(content: frame, completion: .contentProcessed({ (error) in
+                    if let error = error {
+                        print("HUSTON! - Send error: \(error)")
+                    }
+                }))
             }
         }
     }

@@ -11,16 +11,5 @@ import UIKit
 
 class ViewerController: UIViewController {
     
-    func serverConnected() {
-        print("--CONNECTED -- SERVER")
-    }
-    
-    func advertised(name: String) {
-        print("--advertised \(name)")
-    }
-    
-    func received(frame: Data) {
-        print("--Server got data!")
-    }
     
 }

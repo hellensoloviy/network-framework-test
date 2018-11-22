@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1D7A1A21A7126D00026FC2 /* PlayingGameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1D7A1921A7126D00026FC2 /* PlayingGameData.swift */; };
 		9B35D55E21A41E12006337B6 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B35D55D21A41E12006337B6 /* WelcomeVC.swift */; };
 		9BAEED9D219F1DED0027FFCF /* SharedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */; };
 		9BAEED9F219F1EBE0027FFCF /* SharedBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAEED9E219F1EBE0027FFCF /* SharedBrowser.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B1D7A1921A7126D00026FC2 /* PlayingGameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingGameData.swift; sourceTree = "<group>"; };
 		9B27697521A2D8A8004CB7D8 /* NetworkTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkTest.entitlements; sourceTree = "<group>"; };
 		9B35D55D21A41E12006337B6 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		9BAEED9C219F1DED0027FFCF /* SharedPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPoint.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1D7A1821A7126100026FC2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9B1D7A1921A7126D00026FC2 /* PlayingGameData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9B27697621A2D8B1004CB7D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 			children = (
 				9B27697521A2D8A8004CB7D8 /* NetworkTest.entitlements */,
 				9BD08362219EF218003F9064 /* AppDelegate.swift */,
+				9B1D7A1821A7126100026FC2 /* Models */,
 				9BF25C6B21A43ABD009047BF /* Common */,
 				9B35D55C21A41DF1006337B6 /* Start */,
 				9BF25C7921A44E18009047BF /* Gaming */,
@@ -257,6 +268,7 @@
 				9BD08387219EF821003F9064 /* ViewerController.swift in Sources */,
 				9BF25C6A21A434E5009047BF /* HostGameVC.swift in Sources */,
 				9BD08365219EF218003F9064 /* ViewController.swift in Sources */,
+				9B1D7A1A21A7126D00026FC2 /* PlayingGameData.swift in Sources */,
 				9BD08363219EF218003F9064 /* AppDelegate.swift in Sources */,
 				9BAEED9D219F1DED0027FFCF /* SharedPoint.swift in Sources */,
 				9BD08385219EF674003F9064 /* CameraController.swift in Sources */,

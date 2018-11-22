@@ -12,6 +12,7 @@ import UIKit
 
 protocol ClientDelegate: class {
     func connected()
+    func received(frame: Data)
 }
 
 class UDPClient {
@@ -56,10 +57,14 @@ class UDPClient {
             }
         }))
         
-        connection.receiveMessage { (content, contest, isComplete, error) in
-            if content != nil {
-                print("Got connected!")
-                self.delegate?.connected()
+        connection.receiveMessage { [weak self] (content, contest, isComplete, error) in
+            print("recaive ---- 0")
+            if let strongSelf = self {
+                if content != nil {
+                    print("Got connected!")
+                    strongSelf.delegate?.connected()
+                    strongSelf.receive(on: strongSelf.connection)
+                }
             }
         }
     }
@@ -67,7 +72,6 @@ class UDPClient {
     
     //Send framed from the camera to the other device
     func send(frames: [Data]) {
-        print("-- Send -- data")
         connection.batch {
             for frame in frames {
                 connection.send(content: frame, completion: .contentProcessed({ (error) in
@@ -75,6 +79,18 @@ class UDPClient {
                         print("HUSTON! - Send error: \(error)")
                     }
                 }))
+            }
+        }
+    }
+    
+    // Receive packets from the other side and push to screen as video frames
+    func receive(on connection: NWConnection) {
+        connection.receiveMessage { (content, context, isComplete, error) in
+            if let frame = content {
+                    self.delegate?.received(frame: frame)
+                if error == nil {
+                    self.receive(on: connection)
+                }
             }
         }
     }
