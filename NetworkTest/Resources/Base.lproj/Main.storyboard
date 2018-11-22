@@ -459,6 +459,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXJ-RO-EWQ">
+                                <rect key="frame" x="219" y="20" width="140" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.72549019609999998" blue="0.65490196079999996" alpha="0.833984375" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="SXB-c3-Jor"/>
@@ -466,6 +471,7 @@
                     <navigationItem key="navigationItem" id="g2a-Xa-AYH"/>
                     <connections>
                         <outlet property="currentUserBoard" destination="hQI-ES-7MA" id="XEY-Wk-mxv"/>
+                        <outlet property="opponentUserBoard" destination="SXJ-RO-EWQ" id="jv8-W8-Ows"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rnQ-II-Yxf" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,6 +19,7 @@ class BoardView: UIView {
 
 class GameFieldVC: UIViewController {
     @IBOutlet weak var currentUserBoard: UIView!
+    @IBOutlet weak var opponentUserBoard: UIView!
     
     var hostName: String = ""
     var server: UDPServer?
@@ -42,13 +43,12 @@ class GameFieldVC: UIViewController {
        
         server?.delegate = self
         client?.delegate = self
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(serverConnected), name: .serverConnected, object: nil)
 
     }
     
     //MARK: - Observers
-    @objc private func serverConnected(_ notification: Notification) {
+    private func setupConnectedState() {
+        opponentUserBoard.isHidden = false
         print("Server connected!")
         
     }
@@ -86,11 +86,12 @@ extension GameFieldVC: ServerDelegate {
                 return
             }
             
-            let recaivedData = NSCoder.cgRect(for: stringRect)
+            var recaivedData = NSCoder.cgRect(for: stringRect)
+            recaivedData.origin = CGPoint(x: view.frame.size.width - recaivedData.origin.x, y: view.bounds.size.height - recaivedData.origin.y)
             print("-- GET -- data \(stringRect)")
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.1) {
-                    self.currentUserBoard.frame = recaivedData
+                    self.opponentUserBoard.frame = recaivedData
                 }
             }
             
@@ -100,6 +101,7 @@ extension GameFieldVC: ServerDelegate {
     
     func serverConnected() {
          print("GAME -- Server Connected!")
+        setupConnectedState()
     }
     
 }
@@ -107,5 +109,6 @@ extension GameFieldVC: ServerDelegate {
 extension GameFieldVC: ClientDelegate {
     func connected() {
         print("GAME -- Client Connected!")
+        setupConnectedState()
     }
 }
