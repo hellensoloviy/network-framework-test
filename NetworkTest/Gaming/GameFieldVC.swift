@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreGraphics
 
 class BoardView: UIView {
     let size = CGSize(width: 140, height: 25)
@@ -60,8 +61,10 @@ class GameFieldVC: UIViewController {
             gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x + translation.x, y: gestureRecognizer.view!.center.y + translation.y)
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
             if !isServer {
-                
-//                client?.send(frames: )
+                let pointToSend = NSCoder.string(for: gestureRecognizer.view!.frame)
+                if let data = pointToSend.data(using: .utf8) {
+                     client?.send(frames: [data])
+                }
             }
             
         }
@@ -76,6 +79,23 @@ extension GameFieldVC: ServerDelegate {
     
     func received(frame: Data) {
         print("GAME -- Server got data!")
+        
+        if isServer {
+            guard let stringRect = String(data: frame, encoding: .utf8) else {
+                print("-- ISSUE")
+                return
+            }
+            
+            let recaivedData = NSCoder.cgRect(for: stringRect)
+            print("-- GET -- data \(stringRect)")
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.1) {
+                    self.currentUserBoard.frame = recaivedData
+                }
+            }
+            
+        }
+
     }
     
     func serverConnected() {

@@ -67,6 +67,7 @@ class UDPClient {
     
     //Send framed from the camera to the other device
     func send(frames: [Data]) {
+        print("-- Send -- data")
         connection.batch {
             for frame in frames {
                 connection.send(content: frame, completion: .contentProcessed({ (error) in
