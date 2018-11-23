@@ -29,23 +29,21 @@ class GameFieldVC: UIViewController {
         return server != nil
     }
     
+    var gameFieldView: UIView {
+        return self.view
+    }
+    
     var currentUserData: PlayingGameData? = nil
     var opponentUserData: PlayingGameData? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        currentUserBoard.addGestureRecognizer(gestureRecognizer)
-        
-        if server != nil {
-            print("GAME -- IS SERVER ---")
-        } else {
-            print("GAME -- IS client ---")
-        }
-       
         server?.delegate = self
         client?.delegate = self
+        
+        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
+        currentUserBoard.addGestureRecognizer(gestureRecognizer)
 
         currentUserData = PlayingGameData(boardOrigin: currentUserBoard.frame.origin, boardSize: currentUserBoard.frame.size, gameFieldSize: view.frame.size, boardCenter: currentUserBoard.center)
     }
@@ -62,15 +60,33 @@ class GameFieldVC: UIViewController {
     @IBAction func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
         if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
             let translation = gestureRecognizer.translation(in: self.view)
-            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x + translation.x, y: gestureRecognizer.view!.center.y + translation.y)
+            
+            //new center point of view
+            var newX = gestureRecognizer.view!.center.x + translation.x
+            var newY = gestureRecognizer.view!.center.y + translation.y
+            
+            ///handle distance to X bounds of game field
+            let distanceToXBoundFromCenter = gestureRecognizer.view!.frame.size.width / 2
+            if (newX - distanceToXBoundFromCenter) < gameFieldView.frame.origin.x || (newX + distanceToXBoundFromCenter) > gameFieldView.frame.size.width {
+                newX -= translation.x
+            }
+            
+            ///handle distance to Y bounds of game field
+            let distanceToYBoundFromCenter = gestureRecognizer.view!.frame.size.height / 2
+            if (newY - distanceToYBoundFromCenter) < gameFieldView.frame.origin.y || (newY + distanceToYBoundFromCenter) > gameFieldView.frame.size.height {
+                newY -= translation.y
+            }
+            
+            gestureRecognizer.view!.center = CGPoint(x: newX, y: newY)
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
+            
             sendBoardData(gestureRecognizer.view!)
         }
     }
     
-    //MARK: -Private
+    //MARK: - Private
     private func sendBoardData(_ viewToSend: UIView) {
-        let dataToSend = PlayingGameData(boardOrigin: viewToSend.frame.origin, boardSize: viewToSend.frame.size, gameFieldSize: self.view.frame.size, boardCenter: viewToSend.center)
+        let dataToSend = PlayingGameData(boardOrigin: viewToSend.frame.origin, boardSize: viewToSend.frame.size, gameFieldSize: gameFieldView.frame.size, boardCenter: viewToSend.center)
         if let encodedData = try? JSONEncoder().encode(dataToSend) {
             if !isServer {
                 client?.send(frames: [encodedData])
@@ -84,9 +100,9 @@ class GameFieldVC: UIViewController {
         DispatchQueue.main.async {
             self.opponentUserData = recaivedData
             
-            let x = (recaivedData.boardCenter.x * self.view.frame.size.width) / recaivedData.gameFieldSize.width
-            let y = (recaivedData.boardCenter.y * self.view.frame.size.height) / recaivedData.gameFieldSize.height
-            let opponentCenter = CGPoint(x: self.view.frame.size.width - x, y: self.view.frame.size.height - y)
+            let x = (recaivedData.boardCenter.x * self.gameFieldView.frame.size.width) / recaivedData.gameFieldSize.width
+            let y = (recaivedData.boardCenter.y * self.gameFieldView.frame.size.height) / recaivedData.gameFieldSize.height
+            let opponentCenter = CGPoint(x: self.gameFieldView.frame.size.width - x, y: self.gameFieldView.frame.size.height - y)
             
             UIView.animate(withDuration: 0.1) {
                 self.opponentUserBoard.center = opponentCenter
@@ -120,8 +136,3 @@ extension GameFieldVC: ServerDelegate, ClientDelegate {
     }
     
 }
-
-//extension GameFieldVC: ClientDelegate {
-//
-//    
-//}
